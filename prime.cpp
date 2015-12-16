@@ -19,7 +19,7 @@ void calcPrime(int N) {
 }
 
 int main() {
-  cout << "Start" << endl;
+  // cout << "Start" << endl;
   // int start_s = clock();
   // calcPrime(10000000);
   // int end_s = clock();
