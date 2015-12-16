@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
 void calcPrime(int N) {
@@ -19,5 +20,8 @@ void calcPrime(int N) {
 }
 
 int main() {
+  int start_s = clock();
   calcPrime(10000000);
+  int end_s = clock();
+  cout << (end_s - start_s) / double(CLOCKS_PER_SEC) * 1000 << endl;
 }
