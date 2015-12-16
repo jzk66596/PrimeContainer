@@ -29,7 +29,7 @@ int main() {
   struct timeval start, end;
   gettimeofday(&start, NULL);
   cout << "Start: " << start.tv_sec << " " << start.tv_usec << endl;
-  calcPrime(10000000);
+  calcPrime(1000000);
   gettimeofday(&end, NULL);
   cout << "End: " << end.tv_sec << " " << end.tv_usec << endl;
   cout << "Time: " << (end.tv_sec + (end.tv_usec * 1.0 / 1000000)) - (start.tv_sec + (start.tv_usec * 1.0 / 1000000)) << endl;
