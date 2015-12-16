@@ -13,9 +13,9 @@ void calcPrime(int N) {
         break;
       }
     }
-    if (i % 10 == 0) {
-      usleep(10);
-    }
+//    if (i % 10 == 0) {
+//      usleep(10);
+//    }
     if (!check) {
       ++count;
     }
@@ -32,9 +32,14 @@ int main() {
   
   struct timeval start, end;
   gettimeofday(&start, NULL);
-  cout << "Start: " << start.tv_sec << " " << start.tv_usec << endl;
-  calcPrime(2000000);
+  long starttime = start.tv_sec * 1000000 + start.tv_usec;
+  // cout << start.tv_sec << " " << start.tv_usec << endl;
+  calcPrime(6000000);
   gettimeofday(&end, NULL);
-  cout << "End: " << end.tv_sec << " " << end.tv_usec << endl;
-  cout << "Time: " << (end.tv_sec + (end.tv_usec * 1.0 / 1000000)) - (start.tv_sec + (start.tv_usec * 1.0 / 1000000)) << endl;
+  // cout << end.tv_sec << " " << end.tv_usec << endl;
+  long endtime = end.tv_sec * 1000000 + end.tv_usec;
+  float runtime = (end.tv_sec + (end.tv_usec * 1.0 / 1000000)) - (start.tv_sec + (start.tv_usec * 1.0 / 1000000));
+  // cout << "Time: " << (end.tv_sec + (end.tv_usec * 1.0 / 1000000)) - (start.tv_sec + (start.tv_usec * 1.0 / 1000000)) << endl;
+  cout << starttime << " " << endtime << " " << runtime << endl;
+  return 0;
 }
