@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime>
+#include <sys/time.h>
 using namespace std;
 
 void calcPrime(int N) {
@@ -16,12 +16,21 @@ void calcPrime(int N) {
       ++count;
     }
   }
-  cout << count << endl;
 }
 
 int main() {
-  int start_s = clock();
+  cout << "Start" << endl;
+  // int start_s = clock();
+  // calcPrime(10000000);
+  // int end_s = clock();
+  // cout << "End" << endl;
+  // cout << "Time: " << (end_s - start_s) / double(CLOCKS_PER_SEC) * 1000 << endl;
+  
+  struct timeval start, end;
+  gettimeofday(&start, NULL);
+  cout << "Start: " << start.tv_sec << " " << start.tv_usec << endl;
   calcPrime(10000000);
-  int end_s = clock();
-  cout << (end_s - start_s) / double(CLOCKS_PER_SEC) * 1000 << endl;
+  gettimeofday(&end, NULL);
+  cout << "End: " << end.tv_sec << " " << end.tv_usec << endl;
+  cout << "Time: " << (end.tv_sec + (end.tv_usec * 1.0 / 1000000)) - (start.tv_sec + (start.tv_usec * 1.0 / 1000000)) << endl;
 }
