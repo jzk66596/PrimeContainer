@@ -34,7 +34,7 @@ int main() {
   gettimeofday(&start, NULL);
   long starttime = start.tv_sec * 1000000 + start.tv_usec;
   // cout << start.tv_sec << " " << start.tv_usec << endl;
-  calcPrime(6000000);
+  calcPrime(15000000);
   gettimeofday(&end, NULL);
   // cout << end.tv_sec << " " << end.tv_usec << endl;
   long endtime = end.tv_sec * 1000000 + end.tv_usec;
