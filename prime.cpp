@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sys/time.h>
+#include <unistd.h>
 using namespace std;
 
 void calcPrime(int N) {
@@ -11,6 +12,9 @@ void calcPrime(int N) {
         check = true;
         break;
       }
+    }
+    if (i % 10 == 0) {
+      usleep(10);
     }
     if (!check) {
       ++count;
